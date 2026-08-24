@@ -1,6 +1,93 @@
-let input = document.querySelector(".input-headding");
+let name = document.querySelector("#name");
+let department = document.querySelector("#department");
+let employeeno = document.querySelector("#employeeno");
+let employeeid = document.querySelector("#empid");
+let position = document.querySelector("#position");
+let salary = document.querySelector("#salary");
 
 
-function showdata(){
-    let input 
+let tabledata = document.querySelector("tbody");
+let submit = document.querySelector("#submit");
+
+let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+
+
+function showEmployee(employee,index) {
+
+    let tr = document.createElement("tr");
+
+    let ntd = document.createElement("td");
+    let dtd = document.createElement("td");
+    let enutd = document.createElement("td");
+    let eitd = document.createElement("td");
+    let postd = document.createElement("td");
+    let saltd = document.createElement("td");
+
+    ntd.innerText = employee.name;
+    dtd.innerText = employee.department;
+    enutd.innerText = employee.employeeno;
+    eitd.innerText = employee.employeeid;
+    postd.innerText = employee.position;
+    saltd.innerText = employee.salary;
+
+
+    let deletebtn = document.createElement("button");
+    deletebtn.innerText = "Delete";
+    
+    deletebtn.addEventListener("click", function () {
+        
+        employees.splice(index, 1);
+        
+       
+        localStorage.setItem(
+            "employees",
+            JSON.stringify(employees)
+        );
+    
+        tr.remove();
+    });
+
+    tr.appendChild(ntd);
+    tr.appendChild(dtd);
+    tr.appendChild(enutd);
+    tr.appendChild(eitd);
+    tr.appendChild(postd);
+    tr.appendChild(saltd);
+tr.appendChild(deletebtn);
+tabledata.appendChild(tr);
+
 }
+
+submit.addEventListener("click", function () {
+    
+    let employee = {
+        name: name.value,
+        department: department.value,
+        employeeno: employeeno.value,
+        employeeid: employeeid.value,
+        position: position.value,
+        salary: salary.value
+    };
+    
+    employees.push(employee);
+    
+    localStorage.setItem(
+        "employees",
+        JSON.stringify(employees)
+    );
+    
+  
+    showEmployee(employee);
+    
+    name.value = "";
+    department.value = "";
+    employeeno.value = "";
+    employeeid.value = "";
+    position.value = "";
+    salary.value = "";
+    
+});
+employees.forEach(function(employee, index) {
+    showEmployee(employee, index);
+});
