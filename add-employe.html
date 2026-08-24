@@ -12,22 +12,42 @@
         <h1>add information for new employee</h1>
 
     </div>
-    <div class="input-detailes">
-        <input type="text" placeholder="enter employee name">
-        <input type="text" placeholder="department">
-        <input type="tel" placeholder="enter employee number">
-        <input type="id" placeholder="enter employee id">
-        <input type="text" placeholder="position">
-        <input type="number" placeholder="salary">
+
+    <div class="input-section-parent">
+
+        <div class="input-detailes">
+            <div class="input-item">
+                
+                <input aria-label="name" class="add-employee-inputtag " id="name" type="text" placeholder="enter employee name">
+               
+                <input class="add-employee-inputtag" type="text" id="department" placeholder="department">
+
+                <input class="add-employee-inputtag" type="tel" 
+                id="employeeno"
+                placeholder="enter employee number">
+               
+                <input class="add-employee-inputtag" id="empid" type="id" placeholder="enter employee id">
+               
+                <input class="add-employee-inputtag" type="text" id="position" placeholder="position">
+              
+                <input class="add-employee-inputtag" type="number" id="salary" placeholder="salary">
+               
+                <button class="submit-button" id="submit">submit</button>
+            </div>
+        </div>
     </div>
     <div class="employee-detailes">
-        <table border="1">
+        <table >
             <thead>
-                <th>id</th>
-                <th>employee name</th>
-                <th>departmeant</th>
-                <th>position</th>
-                <th>salary</th>
+                      <tr>
+            <th>Employee No</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Employee ID</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>delete</th>
+        </tr>
             </thead>
             <tbody>
 
