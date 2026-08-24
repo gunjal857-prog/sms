@@ -4,3 +4,95 @@
     box-sizing: border-box;
 
 }
+.input-headding{
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    background-color: blanchedalmond;
+    margin: 10px;
+}
+.input-detailes{
+    width: 50%;
+    height: 350px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    background-color: bisque;
+    
+
+}
+.input-item{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.add-employee-inputtag{
+    text-align: center;
+    width: 110%;
+    height: 30px;
+
+}
+.submit-button{
+    border: none;
+    background-color: greenyellow;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+}
+.input-section-parent{
+    width: 100%;
+    margin: 10px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.employee-detailes{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.employee-detailes{
+    
+    background-color: beige;
+    border: 2px solid grey
+
+
+}
+table {
+    border-spacing: 30px 0;
+    margin-top: 0px;
+    padding: 10px;
+}
+/* Table heading */
+thead th {
+color: black;
+    
+}
+thead tr{
+    background-color: beige;
+    text-align: center;
+    height: 30px;
+    color: black;
+    
+}
+
+tbody tr{
+    background-color: bisque;
+    text-align: center;
+    height: 30px;
+    border: 1px solid black;
+}
