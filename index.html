@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="dashboard">
@@ -17,18 +18,30 @@
        <div class="card1">
 
            <div class="student" id="total">
-               <h2>TOTAL EMPLOYEE</h2>
-               <div class="newstudent"><button type="button" id="addnew">add new student</button></div>
+               <h2>Total Employee</h2>
+               <div class="showdata">
+                <span id ="shownum"></span>
+               </div>
+               <div class="newemployee"><button type="button" id="addnew" class="btn btn-light">add new employee</button></div>
+
+               
             </div>
             
             
             <div class="student">
-                <h2>ACTIVE EMPLOYEE</h2>
+                <h2>active employee</h2>
+                <div class="active">
+                    <span></span>
+                </div>
+
+                <div class="viewactive">
+                    <button type="button" class="btn btn-primary">view</button>
+                </div>
             </div>
             
             
             <div class="student">
-                <h2>INACTIVE EMPLOYEE </h2>
+                <h2>unactive employee </h2>
             </div>
             
         </div>
@@ -40,12 +53,12 @@
             
             
             <div class="student" >
-                <h2>ATTENDENCE</h2>
+                <h2>attendence</h2>
             </div>
             
             
             <div class="student" >
-                <h2> LOW ATTENDENCE EMPLOYEE
+                <h2>low attendence employee
                 </h2>
             </div>
         </div>
@@ -57,4 +70,6 @@
     
 </body>
 <script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </html>
