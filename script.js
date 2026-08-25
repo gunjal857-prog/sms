@@ -1,8 +1,5 @@
-let total = document.getElementsByClassName("student")[0];
+let addnew = document.querySelector(".newstudent");
 
-let newadd = document.getElementById("addnew")[0];
-newadd.addEventListener("click",function (){
-    let information = document.createElement("table";
-        
-    )
+addnew.addEventListener("click",function(){
+    window.location.href="add-employee.html"
 })
