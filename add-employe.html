@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="add-ems.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -20,15 +21,38 @@
                 
                 <input aria-label="name" class="add-employee-inputtag " id="name" type="text" placeholder="enter employee name">
                
-                <input class="add-employee-inputtag" type="text" id="department" placeholder="department">
+            <select id="department">
+    <option value="">Select Department</option>
+    <option value="IT">IT</option>
+    <option value="HR">HR</option>
+    <option value="Finance">Finance</option>
+    <option value="Sales">Sales</option>
+    <option value="Marketing">Marketing</option>
+</select>
 
                 <input class="add-employee-inputtag" type="tel" 
                 id="employeeno"
                 placeholder="enter employee number">
                
                 <input class="add-employee-inputtag" id="empid" type="id" placeholder="enter employee id">
+                          
+            <select id="position"  class="add-employee-inputtag" >
+    <option value="">Select position</option>
+    <option value="IT">developer</option>
+    <option value="HR">HR</option>
+    <option value="Finance">data anyalist</option>
+    <option value="Sales">team leader</option>
+    <option value="Marketing">superviser</option>
+    <option value="Marketing">office boy</option>
+    <option value="Marketing">graphic desiner</option>
+    <option value="Marketing">security</option>
+    <option value="Marketing">data entry operater</option>
+    <option value="Marketing">cleaner</option>
+    <option value="Marketing">manager</option>
+    <option value="Marketing">department </option>
+</select>
                
-                <input class="add-employee-inputtag" type="text" id="position" placeholder="position">
+                <!-- <input class="add-employee-inputtag" type="text" id="position" placeholder="position"> -->
               
                 <input class="add-employee-inputtag" type="number" id="salary" placeholder="salary">
                
@@ -37,19 +61,20 @@
         </div>
     </div>
     <div class="employee-detailes">
-        <table >
+        <table class="table table-striped table-dark" >
             <thead>
                       <tr>
-            <th>Employee No</th>
-            <th>Employee Name</th>
-            <th>Department</th>
+                          <th id>Employee Name</th>
+                          <th>Department</th>
+                          <th>Employee No</th>
             <th>Employee ID</th>
             <th>Position</th>
             <th>Salary</th>
-            <th>delete</th>
+            <th >delete</th>
         </tr>
             </thead>
             <tbody>
+                
 
             </tbody>
         </table>
@@ -57,4 +82,6 @@
     
 </body>
 <script src="./addemployee.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </html>
