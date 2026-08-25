@@ -24,6 +24,9 @@ function showEmployee(employee,index) {
     let postd = document.createElement("td");
     let saltd = document.createElement("td");
 
+    // enutd=1;
+    // enutd++;
+
     ntd.innerText = employee.name;
     dtd.innerText = employee.department;
     enutd.innerText = employee.employeeno;
@@ -34,6 +37,12 @@ function showEmployee(employee,index) {
 
     let deletebtn = document.createElement("button");
     deletebtn.innerText = "Delete";
+    deletebtn.classList.add("btn", "btn-danger", "btn-sm","deletebtnn");
+    deletebtn.style.width="100%";
+
+//     deletebtn.addEventListener("mouseenter", () => {
+//     deletebtn.style.backgroundColor = "red";
+// });
     
     deletebtn.addEventListener("click", function () {
         
@@ -55,11 +64,36 @@ function showEmployee(employee,index) {
     tr.appendChild(postd);
     tr.appendChild(saltd);
 tr.appendChild(deletebtn);
-tabledata.appendChild(tr);
 
+tabledata.appendChild(tr);
 }
 
 submit.addEventListener("click", function () {
+
+     let inputvaluearr=[
+
+         name.value === "" ,
+         employeeid.value === "" ,
+         position.value === "" ,
+         salary.value === ""
+        ] 
+   if (inputvaluearr.includes(true)) {
+    error.innerText = "Please fill all employee details";
+    error.style.color = "red";
+    return;
+}
+   
+
+    //  if (
+    //     name.value === "" ||
+    //     employeeid.value === "" ||
+    //     position.value === "" ||
+    //     salary.value === ""
+    // ) {
+    //     error.innerText = "Please fill all employee details";
+    //     error.style.color = "red";
+    //     return;
+    // }
     
     let employee = {
         name: name.value,
@@ -77,7 +111,7 @@ submit.addEventListener("click", function () {
         JSON.stringify(employees)
     );
     
-  
+    // New employee table me show
     showEmployee(employee);
     
     name.value = "";
