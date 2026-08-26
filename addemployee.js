@@ -18,7 +18,7 @@ function generateEmployeeId() {
     return `EMP${String(employeeCount++).padStart(4, '0')}`;
 }
 
-function showEmployee(employee,index) {
+function showEmployee(employee, index) {
 
     let tr = document.createElement("tr");
 
@@ -29,8 +29,21 @@ function showEmployee(employee,index) {
     let postd = document.createElement("td");
     let saltd = document.createElement("td");
 
-    // enutd=1;
-    // enutd++;
+    let actiontd = document.createElement("td");
+
+    let deletebtn = document.createElement("button");
+
+    deletebtn.innerText = "Delete";
+
+    deletebtn.classList.add(
+        "btn",
+        "btn-danger",
+        "btn-sm",
+        "deletebtnn"
+    );
+
+    deletebtn.style.width = "100%";
+
 
     ntd.innerText = employee.name;
     dtd.innerText = employee.department;
@@ -40,27 +53,22 @@ function showEmployee(employee,index) {
     saltd.innerText = employee.salary;
 
 
-    let deletebtn = document.createElement("button");
-    deletebtn.innerText = "Delete";
-    deletebtn.classList.add("btn", "btn-danger", "btn-sm","deletebtnn");
-    deletebtn.style.width="100%";
-
-//     deletebtn.addEventListener("mouseenter", () => {
-//     deletebtn.style.backgroundColor = "red";
-// });
-    
     deletebtn.addEventListener("click", function () {
-        
+
         employees.splice(index, 1);
-        
-       
+
         localStorage.setItem(
             "employees",
             JSON.stringify(employees)
         );
-    
+
         tr.remove();
+
     });
+
+
+    actiontd.appendChild(deletebtn);
+
 
     tr.appendChild(ntd);
     tr.appendChild(dtd);
@@ -68,9 +76,10 @@ function showEmployee(employee,index) {
     tr.appendChild(eitd);
     tr.appendChild(postd);
     tr.appendChild(saltd);
-tr.appendChild(deletebtn);
+    tr.appendChild(actiontd);
 
-tabledata.appendChild(tr);
+
+    tabledata.appendChild(tr);
 }
 
 submit.addEventListener("click", function () {
@@ -78,7 +87,6 @@ submit.addEventListener("click", function () {
      let inputvaluearr=[
 
          name.value === "" ,
-        //  employeeid.value === "" ,
          position.value === "" ,
          salary.value === ""
         ] 
@@ -117,12 +125,12 @@ submit.addEventListener("click", function () {
     );
     
     // New employee table me show
-    showEmployee(employee);
+  showEmployee(employee, employees.length - 1);
     
     name.value = "";
     department.value = "";
     employeeno.value = "";
-    employeeid.value = "";
+    // employeeid.value = "";
     position.value = "";
     salary.value = "";
     
