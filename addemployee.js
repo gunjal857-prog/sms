@@ -1,17 +1,22 @@
 let name = document.querySelector("#name");
 let department = document.querySelector("#department");
 let employeeno = document.querySelector("#employeeno");
-let employeeid = document.querySelector("#empid");
+// let employeeid = document.querySelector("#empid");
 let position = document.querySelector("#position");
 let salary = document.querySelector("#salary");
-
+// let empid = 1;
 
 let tabledata = document.querySelector("tbody");
 let submit = document.querySelector("#submit");
 
 let employees = JSON.parse(localStorage.getItem("employees")) || [];
 
+// let employeeCount = "";
+let employeeCount = employees.length + 1;
 
+function generateEmployeeId() {
+    return `EMP${String(employeeCount++).padStart(4, '0')}`;
+}
 
 function showEmployee(employee,index) {
 
@@ -73,7 +78,7 @@ submit.addEventListener("click", function () {
      let inputvaluearr=[
 
          name.value === "" ,
-         employeeid.value === "" ,
+        //  employeeid.value === "" ,
          position.value === "" ,
          salary.value === ""
         ] 
@@ -99,7 +104,7 @@ submit.addEventListener("click", function () {
         name: name.value,
         department: department.value,
         employeeno: employeeno.value,
-        employeeid: employeeid.value,
+     employeeid: generateEmployeeId(),
         position: position.value,
         salary: salary.value
     };
@@ -122,6 +127,25 @@ submit.addEventListener("click", function () {
     salary.value = "";
     
 });
+// let employeeCount = "";
+// let empid=1;
+// let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+// let employeeCount = employees.length + 1;
+
+// function generateEmployeeId() {
+//     return `EMP${String(employeeCount++).padStart(4, '0')}`;
+// }
+
+
+
+
+// console.log(generateEmployeeId());
+// console.log(generateEmployeeId());
+// console.log(generateEmployeeId());
+
+
+
 employees.forEach(function(employee, index) {
     showEmployee(employee, index);
 });
